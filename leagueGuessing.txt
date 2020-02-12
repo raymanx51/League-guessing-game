@@ -1,0 +1,88 @@
+"""
+This will be a guessing game where a descriptive question pops up and the user must guess the champion.
+"""
+
+
+def game():
+    questions = [
+        f"I am green, boneless, and split up to save myself",
+        f"I like breaking things with my trusty guns",
+        f"I don't do much, I just wait until I can blind my target",
+        f"I like oranges"
+    ]
+
+    champions = [
+        f"zac",
+        f"jinx",
+        f"teemo",
+        f"gangplank"
+    ]
+
+    z_q, j_q, t_q, g_q = questions
+
+    z_a, j_a, t_a, g_a = champions
+
+    guess = ""
+    quest_count = 0
+    guess_count = 0
+    guess_limit = 5
+    out_of_guesses = False
+
+    while guess != z_a and not(out_of_guesses):
+        guess = input(z_q + ", who am I: ").lower()
+        if guess == z_a:
+            print("Correct!")
+            quest_count += 1
+        elif guess_count == guess_limit:
+            out_of_guesses = True
+        else:
+            guess_count += 1
+            print("Try Again")
+
+    while guess != j_a and not(out_of_guesses):
+        guess = input(j_q + ", who am I: ").lower()
+        if guess == j_a:
+            print("Correct!")
+            quest_count += 1
+        elif guess_count == guess_limit:
+            out_of_guesses = True
+        else:
+            guess_count += 1
+            print("Try Again")
+
+    while guess != t_a and not(out_of_guesses):
+        guess = input(t_q + ", who am I: ").lower()
+        if guess == t_a:
+            print("Correct!")
+            quest_count += 1
+        elif guess_count == guess_limit:
+            out_of_guesses = True
+        else:
+            guess_count += 1
+            print("Try Again")
+
+    while guess != g_a and not(out_of_guesses):
+        guess = input(g_q + ", who am I: ").lower()
+        if guess == g_a:
+            print("Correct!")
+            quest_count += 1
+        elif guess_count == guess_limit:
+            out_of_guesses = True
+        else:
+            guess_count += 1
+            print("Try Again")
+
+    if out_of_guesses:
+        print("YOU LOSE!")
+    elif quest_count == 4:
+        print("YOU WIN!")
+
+
+print(f"Here's a little game I made :)\n"
+      f"You will be asked 4 questions and you will have to guess the champion.\n"
+      f"You will only have 5 guesses for the whole game. Good Luck!\n")
+print(game())
+
+
+
+
